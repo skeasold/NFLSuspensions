@@ -1,2 +1,6 @@
 <h1>Players#list</h1>
-<p>Find me in app/views/players/list.html.erb</p>
+<ul>
+  <% @players.each do |player| %>
+    <li><%= link_to "#{player.name}", "players/#{player.id}" %></li>
+  <% end %>
+</ul>

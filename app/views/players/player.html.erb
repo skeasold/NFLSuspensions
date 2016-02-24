@@ -1,2 +1,12 @@
 <h1>Players#player</h1>
-<p>Find me in app/views/players/player.html.erb</p>
+<ul>
+  <li>ID: <%= @player.id %></li>
+  <li>Player Name: <%= @player.name %></li>
+  <li>Team: <%= @player.team %></li>
+  <li># of Games Suspended: <%= @player.games %></li>
+  <li>Category: <%= @player.category %></li>
+  <li>Reason for Suspension: <%= @player.description %></li>
+  <li>Year of Suspension: <%= @player.year %></li>
+  <li><%= link_to "Read about it", "@player.source" %></li>
+  <li>Repeat Offender: <%= @player.repeat %></li>
+</ul>
