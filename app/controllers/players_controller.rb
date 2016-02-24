@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   def list
     @players = fetch_players
+    @players = Kaminari.paginate_array(@players).page(params[:page]).per(15)
   end
 
   def player
