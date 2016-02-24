@@ -4,4 +4,5 @@
     <li><%= link_to "#{player.name}", "players/#{player.id}" %></li>
   <% end %>
 </ul>
-<%= paginate @players %>
+<%= paginate @players, :window => 1 %>
+<%= link_to_next_page @players, 'Next Page' %>

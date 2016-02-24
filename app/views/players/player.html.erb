@@ -10,3 +10,8 @@
   <li><%= link_to "Read about it", "@player.source" %></li>
   <li>Repeat Offender: <%= @player.repeat %></li>
 </ul>
+
+<% next_player = @player.id.to_i + 1 %>
+<% next_player = @player.id if next_player > @players.count %>
+
+<li><%= link_to "Next Player", "./#{next_player}" %></li>
