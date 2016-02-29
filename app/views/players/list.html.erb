@@ -19,7 +19,7 @@
       </thead>
       <tbody>
           <% @players.each do |player| %>
-            <tr><td><%= link_to "#{player.name}" %></td>
+            <tr><td><%= link_to "#{player.name}", "players/#{player.id}" %></td>
             <td><%= player.team %></td>
             <td><%= player.games %></td>
             <td><%= player.category %></td>
