@@ -1,2 +1,48 @@
-<h1>Players#chart</h1>
-<p>Find me in app/views/players/chart.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data_team = google.visualization.arrayToDataTable([
+          ['Team', 'Suspensions'],
+          <% @sorted_by_team.each do |key, value| %>
+          ['<%= key %> (<%= value %>)',     <%= value %>],
+          <% end %>
+        ]);
+
+        var options_team = {
+          title: 'Suspensions by Team'
+        };
+
+        var data_category = google.visualization.arrayToDataTable([
+          ['Team', 'Suspensions'],
+          <% @sorted_by_category.each do |key, value| %>
+          ['<%= key %> (<%= value %>)',     <%= value %>],
+          <% end %>
+        ]);
+
+        var options_category = {
+          title: 'Suspensions by Team'
+        };
+
+        var chart_team = new google.visualization.PieChart(document.getElementById('team'));
+        var chart_category = new google.visualization.PieChart(document.getElementById('category'));
+
+        chart_team.draw(data_team, options_team);
+        chart_category.draw(data_category, options_category);
+      }
+    </script>
+  </head>
+  <body>
+
+    <div id="team" style="width: 1000px; height: 500px;"></div>
+    <div id="category" style="width: 1000px; height: 500px;"></div>
+
+  </body>
+</html>

@@ -10,6 +10,14 @@ class PlayersController < ApplicationController
   end
 
   def chart
+    @players = fetch_players
+    @suspensions_by_team = Hash.new(0)
+    @suspensions_by_category = Hash.new(0)
+    @players.each { |player| @suspensions_by_team[player.team] += 1 }
+    @sorted_by_team = @suspensions_by_team.sort_by { |k, v| v }.to_h
+    @players.each { |player| @suspensions_by_category[player.category] += 1 }
+    @sorted_by_category = @suspensions_by_category.sort_by { |k, v| v }.to_h
+
   end
 
   def fetch_players
