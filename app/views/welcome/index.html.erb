@@ -1,2 +1,16 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="index_main">
+  <%= image_tag "home.jpg", :class => "img-responsive" %>
+  <div class="row">
+    <div class="col-md-10 index_logo">
+      <%= image_tag "logo_black.png", :class => "img-responsive" %>
+    </div>
+    <div class="col-md-2 index_nav nav">
+      <%= link_to "See the Suspensions!", "/players", :class => "nav" %>
+    </div>
+  </div>
+  <div class="index_footer">
+    <p>&copy; 2015 Skylar King. All references to the National Football League
+      are for educational purposes only.
+    </p>
+  </div>
+</div>

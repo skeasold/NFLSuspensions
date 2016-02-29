@@ -1,3 +1,26 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index_main {
+  position: relative;
+}
+.index_main .index_logo {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 40px;
+  color: white;
+}
+.index_main .index_nav{
+  position: absolute;
+  z-index: 2;
+  top: 48px;
+  right: 40px;
+}
+.index_main .index_nav .nav:link{
+  color: white;
+  text-decoration: none;
+}
+.index_footer {
+  background-color: #ECF0F1;
+  padding: 25px;
+  font-size: 10px;
+  text-align: center;
+}
