@@ -11,7 +11,7 @@
 
         var data_team = google.visualization.arrayToDataTable([
           ['Team', 'Suspensions'],
-          <% @sorted_by_team.each do |key, value| %>
+          <% @suspensions_by_team.each do |key, value| %>
           ['<%= key %> (<%= value %>)',     <%= value %>],
           <% end %>
         ]);
@@ -22,7 +22,7 @@
 
         var data_category = google.visualization.arrayToDataTable([
           ['Team', 'Suspensions'],
-          <% @sorted_by_category.each do |key, value| %>
+          <% @suspensions_by_category.each do |key, value| %>
           ['<%= key %> (<%= value %>)',     <%= value %>],
           <% end %>
         ]);
@@ -41,8 +41,20 @@
   </head>
   <body>
 
-    <div id="team" style="width: 1000px; height: 500px;"></div>
-    <div id="category" style="width: 1000px; height: 500px;"></div>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Suspension Stats</h1>
+          <h6><%= link_to "<< Players", "/players" %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="team" style="width: 500px; height: 500px;"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="category" style="width: 500px; height: 500px;"></div>
+        </div>
+      </div>
   </body>
 </html>
